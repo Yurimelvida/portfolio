@@ -14,20 +14,32 @@
 <body>
     <section class="coke-jd">
         <section>
-            <nav style="max-width: 170rem;">
-                <img style="margin-right: 1rem; height: 90px;" src="./img/logo.jpg" alt="">
-                <ul>
-                    <li class="hidden w-full md:flex md:items-center md:w-auto ul-ui-container"><a href="#home">Home</a></li>
-                    <li class="hidden w-full md:flex md:items-center md:w-auto ul-ui-container"><a href="#portfolio">Portfolio</a></li>
-                    <li class="hidden w-full md:flex md:items-center md:w-auto ul-ui-container"><a href="#services">Services</a></li>
-                    <li class="hidden w-full md:flex md:items-center md:w-auto ul-ui-container"><a href="#certificates">Certificates</a></li>
-                    
-                    <svg xmlns="http://www.w3.org/2000/svg" id="menu-button" class="h-6 w-6 cursor-pointer md:hidden block mr-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </ul>
-                
-            </nav>
+
+            <header class="header">
+                <nav class="navbar">
+                    <img style="margin-right: 1rem; height: 80px;" src="./img/logo.jpg" alt="">
+                    <ul class="nav-menu">
+                        <li class="nav-item">
+                            <a href="#home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#portfolio">Portfolio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#services">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#certificates">Certificates
+                        </li>
+                    </ul>
+                    <div class="hamburger">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                </nav>
+        </header>
+
         </section>
      
         <section id="home">
@@ -62,16 +74,16 @@
             </h1>
                 <div class="work-cont">
                     <div>
-                        <img style="height: 300px; width: 500px; object-fit: cover;" src="./img/work1.jpg" alt="">
+                        <img style="height: 300px; width: 500px; object-fit: fill;" src="./img/work1.jpg" alt="">
                     </div>
                     <div>
-                        <img style="height: 300px; width: 500px; object-fit: cover;"  src="./img/work2.jpg" alt="">
+                        <img style="height: 300px; width: 500px; object-fit: fill;"  src="./img/work2.jpg" alt="">
                     </div>
                     <div>   
-                        <img style="height: 300px; width: 500px; object-fit: cover;" src="./img/work3.jpg" alt="">
+                        <img style="height: 300px; width: 500px; object-fit: fill;" src="./img/work3.jpg" alt="">
                     </div>
                     <div>
-                        <img style="height: 300px; width: 500px; object-fit: cover;" src="./img/work4.jpg" alt="">
+                        <img style="height: 300px; width: 500px; object-fit: fill;" src="./img/work4.jpg" alt="">
                     </div>
                 </div>
         </section>
@@ -105,13 +117,13 @@
             </h1>
                 <div class="work-cont yuri">
                     <div>
-                        <img style="height: 300px; width: 500px; object-fit: cover;" src="./img/cert1.png" alt="">
+                        <img style="height: 300px; width: 500px; object-fit: fill;" src="./img/cert1.png" alt="">
                     </div>
                     <div>
-                        <img style="height: 300px; width: 500px; object-fit: cover;"  src="./img/cert2.png" alt="">
+                        <img style="height: 300px; width: 500px; object-fit: fill;"  src="./img/cert2.png" alt="">
                     </div>
                     <div>   
-                        <img style="height: 300px; width: 500px; object-fit: cover;" src="./img/cert3.png" alt="">
+                        <img style="height: 300px; width: 500px; object-fit: fill;" src="./img/cert3.png" alt="">
                     </div>
                 </div>
         </section>
@@ -122,5 +134,28 @@
             </p>
         </footer>
     </section>
+
+
+
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
+
+hamburger.addEventListener("click", mobileMenu);
+
+function mobileMenu() {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+}
+
+const navLink = document.querySelectorAll(".nav-link");
+
+navLink.forEach(n => n.addEventListener("click", closeMenu));
+
+function closeMenu() {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+}
+    </script>
 </body>
 </html>
